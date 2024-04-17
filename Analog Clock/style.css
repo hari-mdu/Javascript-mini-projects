@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(11, 86, 86, 0.748);
+    
+}
+.cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.head{
+    padding-top: 80px;
+    font-size: 42px;
+}
+
+.clock{
+    width: 500px;
+    height: 500px;
+    background-color: aliceblue;
+    margin-top: 60px;
+    border-radius: 50%;
+    border: 15px solid #000;
+    position: relative;
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: #000;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+}
+
+.clock::before{
+    content: 'Titan';
+    position: absolute;
+    font-family: "Righteous", sans-serif;
+    font-size: 32px;
+    letter-spacing: 1px;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+}
+
+.number{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.num-1{
+    transform: rotate(30deg);
+}
+.num-2{
+    transform: rotate(60deg);
+}
+.num-3{
+    transform: rotate(90deg);
+}
+.num-4{
+    transform: rotate(120deg);
+}
+.num-5{
+    transform: rotate(150deg);
+}
+.num-6{
+    transform: rotate(180deg);
+}
+.num-7{
+    transform: rotate(210deg);
+}
+.num-8{
+    transform: rotate(240deg);
+}
+.num-9{
+    transform: rotate(270deg);
+}
+.num-10{
+    transform: rotate(300deg);
+}
+.num-11{
+    transform: rotate(330deg);
+}
+
+.number::before{
+    content: '';
+    width: 1px;
+    height: 5px;
+    background-color: #000;
+    position: absolute;
+    transform: translateX(8px);
+}
+
+.needle{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    z-index: 2;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+}
+
+.hr{
+    width: 10px;
+    height: 140px;
+    background-color: #000;
+    --rotation:0;
+}
+
+.min{
+    width: 7px;
+    height: 190px;
+    background-color: #000;
+    --rotation:30;
+}
+
+.sec{
+    width: 3px;
+    height: 220px;
+    background-color: #000;
+    --rotation:90;
+}
